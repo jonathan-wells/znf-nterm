@@ -46,12 +46,12 @@ while read -r line; do
     hmmsearch \
         -o tmp.out \
         --tblout "${DATADIR}/hmmer-out/${species}_znf.out" \
-        --domtblout "${DATADIR}/hmmer-out/${species}_znf_domains.out" \
         --noali \
         -E 0.01 \
         --domE 0.01 \
         --incE 0.01 \
         --incdomE 0.01 \
+        --cpu 8 \
         "${DATADIR}/phmms/${ZNF}" \
         "${DATADIR}/seqs/${species}.longest_isoform.fa"
 
